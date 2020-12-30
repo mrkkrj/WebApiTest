@@ -1,0 +1,157 @@
+﻿<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>CS - Job List</title>
+    <meta charset="utf-8" />
+    <link href="css/default.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+  <body style="width: 60%; margin: 0 auto;">
+
+    <div ng-controller="ServerJobsController">
+
+	  <!-- logo, server address and buttons -->
+	  <table>
+              <tr>
+               	  <td>	
+                      <div>
+        	          <img class="Logo" src="image/logo.png">
+	              </div>
+                  </td>
+
+		  <td id="searchBar" style="width: 90%; vertical-align: middle; padding-left: 10px">
+        		<input type="text" style="width: 70%; min-height: 30px;" 
+			       ng-model="serverUrl" placeholder="Enter Server address" class="textclass" />
+		        <button style="min-height: 30px;" 
+				ng-click="getJobs()" ng-disabled="isQuerying" ng-show="!isPolling" class="tftextbtn">
+				{{getOnceButtonText}}
+			</button>
+		        <button style="min-height: 30px;" 
+				ng-click="startPolling()" ng-disabled="isPolling || isQuerying" class="tftextbtn">
+				{{pollButtonText}}
+			</button>
+		        <button style="min-height: 30px;" 
+				ng-click="stopPolling()" ng-disabled="!isPolling" ng-show="isPolling" class="tftextbtn">Stop</button>
+
+		        <button style="min-height: 30px;" 
+				ng-click="showPopup(1)" class="tftextbtn"> &#9776;</button>
+                  </td>
+          
+              </tr>
+	 </table>
+
+
+	  <!-- settings dialog -->
+
+        <div class="overlay-bg">
+        </div>
+        <div class="overlay-content popup1">
+            <h2>Job Polling Settings</h2>
+            <p>
+                <label for="frequency">Frequency&nbsp;&nbsp;</label>
+                <input type="text" ng-model="pollFrequency" id="frequency" class="textclass" />&nbsp;ms
+            </p>
+            <p>
+                <label for="filtering">
+                    Filter by&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </label>
+                <select ng-model="jobFilter" id="filtering" class="textclass">
+                    <option name=none value=none selected> none </option>
+                    <option name=finished value=finished> only finished </option>
+                    <option name=runningOrWaiting value=runningOrWaiting> only running or waiting </option>
+                </select>
+            </p>
+            <p>
+                <button class="close-btn" ng-click="hidePopup(1); changeSettings()">Close</button>
+            </p>
+        </div>
+
+
+	  <!-- Job display dialog -->
+	
+        <div class="overlay-content popup2" style=" width: 45%;" ng-keyup="hidePopeupOnEsc($event, 2)">
+            <h2>Job Details: <i>"{{ jobList[selectedJobIndex].name }}"</i></h2>
+            <pre id="" style="overflow:scroll; height:400px;">{{ selectedJobData }}</pre>
+            <p>
+                <button class="close-btn" ng-click="hidePopup(2)">Close</button>
+            </p>
+        </div>	
+
+
+	  <!-- Error message area -->
+
+        <p></p>
+        <div ng-show="serverNotAlive" style="color: #950C0C; font-size: large;" id="errorText">
+            Cannot Connect Server!
+        </div>
+
+
+	  <!-- Job List  -->
+
+        <div ng-show="initialState">
+            <img style="height: 100%; width: 100%" src="image/wall.jpg">
+        </div>
+
+        <div ng-show="!initialState">
+            <h2>Jobs on Server:</h2>
+
+	    <p> <b>Collection's Etag:</b> <span ng-class="etagChangedClass">{{ jobListEtag }}</span>
+	    	<br>
+	        <b>Last Modified:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> 
+	    	<span ng-class="lastModifChangedClass" ng-init="showLastMofied = true" ng-show="showLastMofied">{{ jobListLastModified }}</span>
+		    <span ng-click="showLastMofied = !showLastMofied" class="pointer" style="background:white;">&nbsp;&#9662;</span>
+            <br>
+            <b>Jobs Count:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> <span>{{ jobListCount }}</span>
+        </p>
+
+		<table id="jobTable"    style="background:white;  width:100%;"> 
+                <tr>
+                    <td class="table-title">Name</td>
+                    <td class="table-title">Status</td>
+                    <td class="table-title">Progress</td>
+                    <td class="table-title">Job-ID</td>
+                </tr>
+                <tr ng-repeat="job in jobList" ng-click="showJob($index)" class="pointer">
+                    <td>{{job.name}}</td>
+                    <!--<td><i>{{job.status}}</i></td> -->
+                    <td job-status status-value="job.status" status-type="job.statusType"> </td>
+                    <td ng-show="job.name && job.id"> {{job.progress *100 | number:2}}%</td>
+                    <td>{{job.id}}</td>
+                </tr>
+            </table>
+
+
+            <p ng-show="false"> raw data: {{ jobList }}</p>
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+        
+    </div>
+
+</body>
+  </html>

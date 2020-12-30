@@ -1,0 +1,52 @@
+﻿<!doctype html>
+    <head>
+        <title>CS-5 List and Delete Tool</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="js/vendor/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <script src="js/vendor/jquery-1.11.2.js"></script>
+        <script src="js/vendor/jquery.mobile-1.4.5.min.js"></script>
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+        <div data-role="page">
+            <div data-role="header" id="headerformat">                               
+                <div class="ui-field-contain">
+                    <label for="server">                          
+                        <!-- <img src="../image/logo.png" alt="c++ cloud logo" height="42" width="42" /> -->
+                        <b style="margin-left:40px;font-size:120%;">Server <i>(_._._._:8111)</i>  </b>                                              
+                    </label>
+                    <input id="serveraddi" name="server" placeholder="Server name or IP" value="" type="text">         
+                                                    
+                    <button id="loadFiles" class="ui-btn ui-btn-inline" style="margin-top: 10px;">Get I/O Files</button>                    
+                    <button id="loadResources" class="ui-btn ui-btn-inline" style="margin-top: 10px;">Get All Ress.</button>
+                    <button id="loadProfiles" class="ui-btn ui-btn-inline" style="margin-top: 10px;">Get Profiles</button>
+                    <button id="loadSpotcolor" class="ui-btn ui-btn-inline" style="margin-top: 10px;">Get Spotcolors</button>
+                    <button id="loadIccSubst" class="ui-btn ui-btn-inline" style="margin-top: 10px;">Get ICC Subst.</button>
+                    <button id="loadTemplates" class="ui-btn ui-btn-inline" style="margin-top: 10px;">Get Templates</button>
+                    <button id="loadHotfolders" class="ui-btn ui-btn-inline" style="margin-top: 10px;">Get Hotfolders</button>
+                    <button id="loadLocations" class="ui-btn ui-btn-inline" style="margin-top: 10px;">Get Locations</button>
+                    <button id="loadPrinters" class="ui-btn ui-btn-inline" style="margin-top: 10px;">Get Printers</button>
+                    <button id="loadJobs" class="ui-btn ui-btn-inline" style="margin-top: 10px;">Get Jobs</button>
+                    <button id="loadSmpDocuments" class="ui-btn ui-btn-inline" style="margin-top: 10px;">Get SMP Docs</button>
+                    <button id="loadSmpDefaults" class="ui-btn ui-btn-inline" style="margin-top: 10px;">Get SMP Defaults</button>
+                    <button id="deleteList" class="ui-btn ui-btn-inline" style="margin-top: 10px;">Delete Current List</button>
+
+                    <label for="pollinterval">
+                        <input id="pollCheck" name="checkbox-0 " type="checkbox">Poll                        
+                    </label>
+                    <input id="pollInterval" name="pollinterval" value="1000" type="text">
+                </div>
+            </div>     
+                   
+            <div role="main" class="ui-content">
+            </div><!-- /content -->
+        </div>
+        
+        <div class="modal"><!-- mrkkrj: for the popup --> Loading, please wait... <img src="../image/FhHRx.gif" height="18"/> </div>
+
+    </body>
+</html>

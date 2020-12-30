@@ -1,0 +1,216 @@
+﻿body
+{
+	width: 100%;
+	height: 100%;
+	font-family: Calibri;
+	background-image: linear-gradient(20deg, white, #DDE6DF 62.6%, #24507C);
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
+}
+
+h4 {
+    height:25px;
+    text-align: center;
+}
+
+.Logo {
+	width: 105.59px;
+	height: 103.64px;
+}
+
+.searchBox {
+}
+
+.textclass
+{
+	width: 46%;
+	font-family: "segoe ui";
+}
+	
+.tftextbtn
+{
+	color: #fff;
+	display: inline-block;
+	background-color: rgb(230, 100, 0);
+    font-family: "segoe ui";
+}
+
+.PictureGallery {
+}
+
+.mainPic {
+}
+
+.thumbnailPic {
+}
+
+.EventTitle {
+    font-size: large;
+}
+
+.EventDescription {
+    font-family:Helvetica;
+   word-wrap:break-word;
+   font-size:small;
+}
+
+a:link {text-decoration:none;}
+td 
+{
+	vertical-align:top;
+	valign:top;
+}
+
+.verticalLine {
+    border-left: thick solid #ff0000;
+}
+
+.wrap-words {
+    word-wrap:break-word;
+}
+
+.eventful-badge,
+.eventful-badge * {
+  margin: 0             !important;
+  padding: 0            !important;
+  border: 0             !important;
+  text-align: center    !important;
+  color: #CCC           !important;
+  font-family: Arial    !important;
+  text-decoration: none !important;
+}
+
+.eventful-medium {
+  position: relative    !important;
+  width: 100px          !important;
+  font-size: 12px       !important;
+  line-height: 13px     !important;
+}  
+
+.red {
+    color: #CC0000;
+}
+.green {
+    color: #00CC00;
+}
+.orange {
+    color: #ffa500;
+}
+.gray {
+    color: #B0B0B0;
+}
+
+
+/* dialogs with close button*/
+
+.overlay-bg {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+    cursor: pointer;
+    z-index: 1000; /* high z-index */
+    background: #000; /* fallback */
+    background: rgba(0,0,0,0.75);
+}
+
+.overlay-content {
+    display: none;
+    background: #fff;
+    padding: 1%;
+    width: 40%;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    margin: 0 0 0 -20%; /* add negative left margin for half the width to center the div */
+    cursor: default;
+    z-index: 10001;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.9);
+}
+ 
+.close-btn {
+    cursor: pointer;
+    border: 1px solid #333;
+    padding: 2% 5%;
+    background: #a9e7f9; /* fallback */
+    background: -moz-linear-gradient(top,  #a9e7f9 0%, #77d3ef 4%, #05abe0 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a9e7f9), color-stop(4%,#77d3ef), color-stop(100%,#05abe0));
+    background: -webkit-linear-gradient(top,  #a9e7f9 0%,#77d3ef 4%,#05abe0 100%);
+    background: -o-linear-gradient(top,  #a9e7f9 0%,#77d3ef 4%,#05abe0 100%);
+    background: -ms-linear-gradient(top,  #a9e7f9 0%,#77d3ef 4%,#05abe0 100%);
+    background: linear-gradient(to bottom,  #a9e7f9 0%,#77d3ef 4%,#05abe0 100%);
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.3);
+
+    /*align: right*/
+    float: right;
+}
+
+.close-btn:hover {
+    background: #05abe0;
+    /*background-color: rgb(230, 100, 0); --- TODO::: */
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.table-title {
+    font-weight: bold;
+    background: white;
+}
+
+.error-text {
+    color: #950C0C;
+    font-size: large;
+}
+
+/* result tables */
+
+.result-table {
+    border-collapse: collapse;
+}
+
+.result-table, .result-table th, .result-table td {
+    /*border: 1px solid black;*/
+    border-bottom: 1px solid black;
+}
+
+.result-table {
+    width: 100%;
+}
+
+.result-table th {
+    //height: 30px;
+    //background-color: #4CAF50;
+    //background-color: gray;
+    //color: white;
+    background-color: white;
+}
+
+.result-table th, .result-table td {
+    padding: 12px;
+    text-align: left;
+}
+
+.result-table tr:hover {background-color: #f5f5f5}
+.result-table tr {background-color: white }
+
+
+/* THE button, complete! */
+
+.tftextbtn-full
+{
+	color: #fff;
+	display: inline-block;
+	background-color: rgb(230, 100, 0);
+    font-family: "segoe ui";
+    width: 120px;
+    min-height: 30px;
+}
+
+.tftextbtn-full:hover {background-color: orangered}
+

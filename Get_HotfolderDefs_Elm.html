@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>CS - GET Hotfolders</title>
+  <link href="css/default.css" rel="stylesheet" type="text/css">
+
+  <script type="text/javascript" src="js/elm_get_hotfolders.js"></script>
+</head>
+
+<body style="width: 80%; margin: 0 auto;">
+
+<div id="get-hotfolders"></div>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
+</body>
+
+<script type="text/javascript">
+    // ELM bootstrapping
+    var node = document.getElementById('get-hotfolders');
+    var app = Elm.Main.embed(node);;
+</script>
+
+
+<script type="text/javascript">
+
+// preliminary!
+function isIE() {
+  // up to IE.11
+  var myNav = navigator.userAgent.toLowerCase();
+  return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+}
+
+
+// cachebooster working now!
+
+/*
+function isIE2() { 
+  var apname = navigator.appName;
+  return ( (navigator.appName == 'Microsoft Internet Explorer') || 
+           ( (navigator.appName == 'Netscape') &&  
+	     (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))); 
+}
+
+if (isIE2()) {
+  alert("This App won't be working with IE (at the moment)!");
+} else {
+  alert("Cachebooster not (yet) implemented!");	
+}
+*/
+
+</script>
+
+
+</html>

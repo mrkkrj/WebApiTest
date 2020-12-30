@@ -1,0 +1,194 @@
+body {
+    box-sizing: border-box;
+}
+
+.name {
+    float: left;
+    display: inline;
+    padding: 0.75em;
+}
+
+.error {
+    color: red;
+}
+
+.info {
+    color: grey;
+}
+
+.warning {
+    color: gold;
+}
+
+.s_waiting {
+    color: grey;
+}
+
+.s_finished {
+    color: green;
+}
+
+.s_warning {
+    color: gold;
+}
+
+.s_running {
+    color: blueviolet;
+}
+
+.linked {
+    color: grey;    
+}
+
+.status {
+    float: right;    
+    display: inline;
+}
+
+.pbar {
+    float: right;    
+    display: inline;
+    max-width: 100px;
+    min-width: 100px;
+    width: 100px;
+    height: 20px;
+    background-color: lightgray;
+    padding: 2px;
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.pbar>p.pbartext{
+    color: white;
+    font-size: 12px;
+    margin: 0px;
+    margin-top: 1px;
+    padding: 0px;
+    padding-top: 2px;
+    float: left;
+    background-color: green;
+    height: 16px;
+    min-height: 16px;
+}
+
+.clr {
+    /*float: none;*/
+    display: inline;
+    clear: both;
+}
+
+.search {
+    float: left;
+    display: inline;
+    color: red;
+    margin-top: 11px;
+    margin-bottom: 12px;
+}
+
+#headerformat {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+#waiting {
+    background-color: #fcf8e3;    
+}
+#running {
+    background-color: #c7ddef;    
+}
+#finished {
+    background-color: #dff0d8;    
+}
+
+#deleteList {
+    background-color: #ff9999;/*#ffcccc; + darker*/ 
+}
+#deleteList:hover {
+    background-color: lightcoral; 
+}
+
+/* OPEN TODO::  separate class for that? */
+
+#loadProfiles {
+    background-color: palegoldenrod; 
+}
+#loadProfiles:hover {
+    background-color: lightgray; 
+}
+
+#loadSpotcolor {
+    background-color: palegoldenrod; 
+}
+#loadSpotcolor:hover {
+    background-color: lightgray; 
+}
+
+#loadIccSubst {
+    background-color: palegoldenrod; 
+}
+#loadIccSubst:hover {
+    background-color: lightgray; 
+}
+
+#loadTemplates {
+    background-color: lightgoldenrodyellow; 
+}
+#loadTemplates:hover {
+    background-color: lightgray; 
+}
+
+#loadHotfolders {
+    background-color: lightgoldenrodyellow; 
+}
+#loadHotfolders:hover {
+    background-color: lightgray; 
+}
+
+#loadLocations {
+    background-color: #e6dd7f;/*palegoldenrod; + darker*/ 
+}
+#loadLocations:hover {
+    background-color: lightgray; 
+}
+
+#loadPrinters {
+    background-color: #e6dd7f;/*palegoldenrod; + darker*/ 
+}
+#loadPrinters:hover {
+    background-color: lightgray; 
+}
+
+#loadJobs{
+    background-color: lightgreen; 
+}
+#loadJobs:hover {
+    background-color: limegreen; 
+}
+
+
+/* (mrkkrj) the "loading..." popup */
+
+.modal {
+    display: none;
+    background: #fff;
+    padding: 1%;
+    width: 40%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin: 0 0 0 -20%; /* add negative left margin for half the width to center the div */
+    cursor: default;
+    z-index: 10001;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.9);                 
+}
+
+body.loading {
+    overflow: hidden;   
+}
+
+body.loading .modal {
+    display: block;
+}
+
+
